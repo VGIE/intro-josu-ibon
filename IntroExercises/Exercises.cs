@@ -91,19 +91,20 @@ namespace IntroExercises
         {
             if (A == null || B == null)
                 return false;
-            if (A.Length == B.Length)
+            if (A.Length != B.Length)
+                return false;
                 for (int i = 0; i < A.Length; i++)
+            {
+
+
+                if (Find(B, A[i]) == -1)
+                    return false;
+                if (Count(B, B[Find(B, A[i])]) != Count(A, A[i]))
                 {
-
-
-                    if (Find(B, A[i]) == -1)
-                        return false;
-                    if (Count(B, Find(B, A[i])) != Count(A, A[i]))
-                    {
-                        return false;
-                    }
-
+                    return false;
                 }
+
+            }
             return true;
         }
     
