@@ -13,12 +13,14 @@ namespace IntroExercises
         //Find should return the position in array where value appears for the first time. -1 if the value isn't found or the array is empty/null
         public static int Find(int[] array, int value)
         {
-            for(int i=0; i<array.Length;i++)
-            {
-                if(array[i]== value)
-                return i;
+            if (array == null)
+                return -1;
+            for (int i = 0; i < array.Length; i++)
+                {
+                    if (array[i] == value)
+                        return i;
 
-            }
+                }
             return -1;
         }
 
@@ -27,13 +29,17 @@ namespace IntroExercises
         public static int Count(int[] array, int value)
         {
             int suma = 0;
+            if (array == null)
+            {
+                return 0;
+            }
 
             for (int i = 0; i < array.Length; i++)
-                {
-                    if (array[i] == value)
-                        suma++;
+            {
+                if (array[i] == value)
+                    suma++;
 
-                }
+            }
 
             return suma;
         }
@@ -46,10 +52,10 @@ namespace IntroExercises
             if (startIndex > endIndex)
                 return -1;
             for (int i = startIndex; i < endIndex; i++)
-                {
-                    if (array[i] == value)
-                        return i;
-                }
+            {
+                if (array[i] == value)
+                    return i;
+            }
             return -1;
         }
 
@@ -59,7 +65,7 @@ namespace IntroExercises
 
         public static int Count(int[] array, int value, int startIndex, int endIndex)
         {
-          int suma = 0;
+            int suma = 0;
             if (startIndex > endIndex)
                 return suma;
 
@@ -87,10 +93,19 @@ namespace IntroExercises
                 return false;
             if (A.Length == B.Length)
                 for (int i = 0; i < A.Length; i++)
-                Find[B, A[i]]
+                {
 
 
-                        return true;
+                    if (Find(B, A[i]) == -1)
+                        return false;
+                    if (Count(B, Find(B, A[i])) != Count(A, A[i]))
+                    {
+                        return false;
+                    }
+
+                }
+            return true;
         }
+    
     }
 }
