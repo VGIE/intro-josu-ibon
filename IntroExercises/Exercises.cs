@@ -59,7 +59,18 @@ namespace IntroExercises
 
         public static int Count(int[] array, int value, int startIndex, int endIndex)
         {
-            return 0;
+          int suma = 0;
+            if (startIndex > endIndex)
+                return suma;
+
+            for (int i = startIndex; i < endIndex; i++)
+            {
+                if (array[i] == value)
+                    suma++;
+
+            }
+
+            return suma;
         }
 
         //TODO #5
@@ -72,7 +83,14 @@ namespace IntroExercises
         //  AreEqual(null, null) => false
         public static bool AreEqual(int[] A, int[] B)
         {
-            return true;
+            if (A == null || B == null)
+                return false;
+            if (A.Length == B.Length)
+                for (int i = 0; i < A.Length; i++)
+                Find[B, A[i]]
+
+
+                        return true;
         }
     }
 }
