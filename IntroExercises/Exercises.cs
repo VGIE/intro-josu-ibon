@@ -8,11 +8,21 @@ namespace IntroExercises
 {
     public static class Exercises
     {
+        public void main(string [] argv)
+        {
+
+        }
         //TODO #1
         //Find should return the position in array where value appears for the first time. -1 if the value isn't found or the array is empty/null
         public static int Find(int[] array, int value)
         {
-            return 0;
+            for(int i=0; i<array.Length;i++)
+            {
+                if(array[i]== value)
+                return i;
+
+            }
+            return -1;
         }
 
         //TODO #2
